@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@1,9..40,200&family=Inter:wght@200&family=Josefin+Sans:wght@200&family=Kumbh+Sans:wght@300&family=Libre+Franklin:wght@200&family=Manrope:wght@200&family=Poppins:wght@200&display=swap");
+
+:root {
+  --Red: hsl(1, 90%, 64%);
+
+  --Blue: hsl(219, 85%, 26%);
+
+  --White: hsl(0, 0%, 100%);
+
+  --Very-light-grayish-blue: hsl(210, 60%, 98%);
+
+  --Light-grayish-blue-1: hsl(211, 68%, 94%);
+
+  --Light-grayish-blue-2: hsl(205, 33%, 90%);
+
+  --Grayish-blue: hsl(219, 14%, 63%);
+
+  --Dark-grayish-blue: hsl(219, 12%, 42%);
+
+  --Very-dark-blue: hsl(224, 21%, 14%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 100vh;
+  background-color: var(--Light-grayish-blue-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main_container {
+  background-color: var(--White);
+  padding: 2rem 1rem;
+  width: 70%;
+  margin: 2rem;
+  border-radius: 0.3rem;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.notifications {
+  font-size: 2rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+#notifiations_num {
+  background-color: var(--Blue);
+  display: inline-block;
+  color: var(--White);
+  font-size: 1.4rem;
+  width: 20px;
+  height: 26px;
+  text-align: center;
+  border-radius: 0.2rem;
+}
+#mark_all {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#mark_all:hover {
+  color: var(--Blue);
+}
+img {
+  width: 4rem;
+}
+p {
+  color: var(--Grayish-blue);
+}
+.notification_card.unread .description::after {
+  content: "";
+
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-image: url(images/circular_image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 15%;
+  transform: translateY(-15%);
+}
+.time{
+  margin-top: 1rem;
+}
+strong {
+  color: var(--Very-dark-blue);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+strong:hover {
+  color: var(--Blue);
+}
+
+b {
+  color: var(--Very-dark-blue);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+b:hover {
+  color: var(--Blue);
+}
+.notification_card {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.8rem;
+}
+.card_text {
+  display: grid;
+  grid-template-rows: 25px;
+}
+.unread {
+  background-color: var(--Very-light-grayish-blue);
+  cursor: pointer;
+}
+.unread:hover {
+  background-color: var(--Light-grayish-blue-1);
+  transition: all 0.2s ease-in-out;
+}
+.message {
+  display: inline-block;
+  margin: auto;
+  margin-left: auto;
+  margin-left: auto;
+  text-align: left;
+  width: 50%;
+  margin-left: 5rem;
+  padding: 1rem;
+  line-height: 1.4rem;
+  background-color: var(--Very-light-grayish-blue);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.message:hover {
+  background-color: var(--Light-grayish-blue-1);
+}
+.chess_img {
+  cursor: pointer;
+  width: 3.5em;
+  display: block;
+  margin-left: auto;
+}
+
+@media (max-width: 930px) {
+  body {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .notification_card {
+    padding: 0.5rem;
+  }
+  img {
+    width: 3rem;
+  }
+  .time{
+    margin-top: .5rem;
+  }
+}
+@media (max-width: 785px) {
+  .main_container {
+    width: 35rem;
+  }
+}
+@media (max-width: 570px) {
+  body {
+    font-size: 0.7rem;
+  }
+  .main_container {
+    width: 90%;
+  }
+  #notifiations_num {
+    font-size: 1rem;
+    width: 13px;
+    height: 19px;
+  }
+  .notifications strong {
+    font-size: 1rem;
+  }
+  .notification_card {
+    height: 6rem;
+  }
+  .card_text {
+    display: inline;
+  }
+  .time p {
+    margin-top: 0.5rem;
+  }
+  .notification_card.unread .description::after {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: .5rem;
+  }
+  img{
+    width: 2.5rem;
+  }
+}
